@@ -1,0 +1,41 @@
+Image Pull Back off error Debug:::
+
+* If my image spelling is wrong then i will get this error
+
+
+
+Method 2: if my image is private then also i will get Image pull back off error 
+
+Then what u have to do:
+
+Create the docker imagepullSecreates:
+
+
+Command:  
+kubectl create secret docker-registry mma --docker-server=https://index.docker.io/v1/ --docker-username=tejas948262 --docker-password=Tejas@948262 --docker-email=tejaskp99@gmail.com
+
+
+Nginx fine:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: tejas948262/mma:v1
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: mma
