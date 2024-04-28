@@ -3,6 +3,15 @@ Image Pull Back off error Debug:::
 * If my image spelling is wrong then i will get this error
 
 
+Docker Imaga push:
+
+docker tag nginx:latest tejas948262/darshu:latest
+docker login 
+User name :tejas948262
+password: Tejas@948262`
+docker push tejas948262/darshu
+
+
 
 Method 2: if my image is private then also i will get Image pull back off error 
 
